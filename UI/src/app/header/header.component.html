@@ -1,11 +1,79 @@
+<!-- header.component.html -->
 
 <p-menubar [model]="menuItems">
-    <ng-template let-item pTemplate="start">
-      <button pButton type="button" icon="pi pi-bars" class="p-button-rounded p-button-outlined"></button>
-    </ng-template>
-
-    <ng-template let-item pTemplate="end">
-      <button pButton type="button" icon="pi pi-sign-out" class="p-button-rounded p-button-outlined"></button>
-    </ng-template>
-  </p-menubar>
+  <ng-template let-item pTemplate="start">
+    <!-- You can add a button for menu toggling here if needed -->
+  </ng-template>
   
+  <ng-template let-item pTemplate="end">
+    <div class="flex align-items-center gap-2">
+      <button class="p-link inline-flex justify-content-center align-items-center text-gray-500 h-3rem w-3rem 
+        border-circle hover:bg-white-alpha-10 transition-all transition-duration-200"
+        (click)="openSidebar()">
+        <i class="pi pi-user text-2xl p-button-rounded p-button-outlined"></i>
+      </button>
+    </div>
+  </ng-template>
+</p-menubar>
+
+<p-sidebar [(visible)]="sidebarVisible" [position]="'right'">
+  <h3>Welcome</h3>
+  <p>Hanufa Zaman</p>
+  <!-- <ul class="p-menu p-component">
+    <ng-container *ngFor="let item of menuItems">
+      <li class="p-menuitem">
+        <a [routerLink]="item.routerLink" (click)="closeSidebar()">{{ item.label }}</a>
+        <ul *ngIf="item.items">
+          <li *ngFor="let subItem of item.items" class="p-menuitem">
+            <a [routerLink]="subItem.routerLink" (click)="closeSidebar()">{{ subItem.label }}</a>
+          </li>
+        </ul>
+      </li>
+    </ng-container>
+  </ul> -->
+  <ul class="list-none m-0 p-0">
+    <li>
+      <a class="cursor-pointer flex surface-border mb-3 p-3 align-items-center border-1 surface-border border-round hover:surface-hover transition-colors transition-duration-150">
+        <span>
+          <i class="pi pi-user text-xl text-primary">
+
+          </i></span><div class="ml-3">
+            <span class="mb-2 font-semibold">Profile</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="cursor-pointer flex surface-border mb-3 p-3 align-items-center border-1 surface-border border-round hover:surface-hover transition-colors transition-duration-150">
+          <span>
+            <i class="pi pi-money-bill text-xl text-primary">
+
+            </i>
+          </span>
+          <div class="ml-3">
+            <span class="mb-2 font-semibold">Billing</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="cursor-pointer flex surface-border mb-3 p-3 align-items-center border-1 surface-border border-round hover:surface-hover transition-colors transition-duration-150">
+          <span><i class="pi pi-cog text-xl text-primary">
+
+          </i></span>
+          <div class="ml-3">
+            <span class="mb-2 font-semibold">Settings</span>
+          </div>
+        </a>
+      </li>
+      <li>
+        <a class="cursor-pointer flex surface-border mb-3 p-3 align-items-center border-1 surface-border border-round hover:surface-hover transition-colors transition-duration-150">
+          <span><i class="pi pi-power-off text-xl text-primary">
+
+          </i>
+        </span>
+        <div class="ml-3">
+          <span class="mb-2 font-semibold p-component" [routerLink]="'/login'">Login</span>
+        </div>
+      </a>
+    </li>
+  </ul>
+</p-sidebar>

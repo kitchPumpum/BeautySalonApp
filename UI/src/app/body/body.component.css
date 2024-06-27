@@ -17,8 +17,8 @@
   }
   .overlay-button {
     position: absolute;
-    bottom: 298px; /* Adjust the button's position as needed */
-    right: 559px; /* Adjust the button's position as needed */
+    bottom: 320px; /* Adjust the button's position as needed */
+    right: 590px; /* Adjust the button's position as needed */
     z-index: 1; /* Ensure the button appears on top of the image */
   }
 

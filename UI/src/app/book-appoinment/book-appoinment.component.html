@@ -1,0 +1,55 @@
+<div class="surface-card p-4 shadow-2 border-round w-full lg:w-6 mx-auto my-4">
+    <div class="text-center mb-5">
+        <div class="text-900 text-3xl font-medium mb-3">Book an Appointment</div>
+        <span class="text-600 font-medium line-height-3">REQUEST A NEW APPOINTMENT</span>
+        <a class="font-medium no-underline ml-2 text-blue-500 cursor-pointer">Create today!</a>
+    </div>
+    <div class="grid">
+        <div class="col-6">
+            <div class="border-round-sm font-bold">
+                <label for="calender" class="font-bold block"> Date </label>
+                    <p-calendar 
+                        [(ngModel)]="date1" 
+                        [showIcon]="true"
+                        inputId="calender" 
+                        [showOnFocus]="false"/> 
+            </div>            
+        </div>
+        <div class="col-6">
+            <div class="border-round-sm font-bold">
+                <label for="time" class="font-bold block"> Time </label>
+                    <p-dropdown 
+                    [options]="times" 
+                    [(ngModel)]="selectedTime" 
+                    optionLabel="name"
+                    placeholder="Select a Time"/>   
+            </div>
+        </div>
+    </div>
+    <div class="grid">
+        <div class="col-6">
+            <div class="border-round-sm font-bold">
+                <label for="service" class="font-bold block"> Service </label>
+                    <p-dropdown 
+                    [options]="facilities" 
+                    [(ngModel)]="selectedFacility" 
+                    optionLabel="name"
+                    placeholder="Select a Service" />
+
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="border-round-sm font-bold">
+                <label for="employee" class="font-bold block"> Employee </label>
+                    <p-dropdown 
+                    [options]="employes" 
+                    [(ngModel)]="selectedEmployee" 
+                    optionLabel="name"
+                    placeholder="Select an Employee" />
+            </div>
+        </div>   
+    </div>
+</div>
+
+
+
